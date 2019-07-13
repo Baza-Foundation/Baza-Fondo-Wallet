@@ -297,7 +297,7 @@ WalletShellManager.prototype._spawnService = function (walletFile, password, onE
 
     this.serviceProcess.on('exit', (code, signal) => {
         serviceDown = true;
-        log.debug(`turtle service exit with code: ${code}, signal: ${signal}`);
+        log.debug(`baza service exit with code: ${code}, signal: ${signal}`);
     });
 
     if (!this.serviceStatus()) {

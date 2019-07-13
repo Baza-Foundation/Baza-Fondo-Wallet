@@ -10,9 +10,9 @@
         "start": "electron .",
         "debug": "electron . debug",
         "dev": "electron . dev",
-        "dist-win": "./node_modules/.bin/electron-builder --x64 --win -c.extraResources=./bin/win/baza-service.exe",
-        "dist-lin": "./node_modules/.bin/electron-builder --x64 --linux -c.extraResources=./bin/lin/baza-service",
-        "dist-mac": "./node_modules/.bin/electron-builder --x64 --mac -c.extraResources=./bin/osx/baza-service"
+        "dist-win": "./node_modules/.bin/electron-builder --x64 --win",
+        "dist-lin": "./node_modules/.bin/electron-builder --x64 --linux",
+        "dist-mac": "./node_modules/.bin/electron-builder --x64 --mac"
     },
     "keywords": [],
     "author": "Rixombea, Macroshock, TurtleCoin Developers, Baza Foundation Developers",
@@ -30,6 +30,7 @@
         "csv-writer": "^1.2.0",
         "electron-log": "^2.2.17",
         "electron-store": "^2.0.0",
+        "find-process": "^1.4.2",
         "fnv-plus": "^1.2.12",
         "node-crypto-gcm": "^1.0.3",
         "qr-image": "^3.2.0",
@@ -71,11 +72,19 @@
             "maintainer": "rixombea (@labaylabay)",
             "category": "Office",
             "vendor": "BazaFoundation",
-            "synopsis": "Baza Foundation GUI Wallet"
+            "synopsis": "Baza Foundation GUI Wallet",
+            "extraResources": [
+                "**/bin/lin/baza-service",
+                "**/bin/lin/bazad"
+            ]
         },
         "win": {
             "target": "nsis",
-            "publisherName": "BazaFoundation"
+            "publisherName": "BazaFoundation",
+            "extraResources": [
+                "**/bin/win/baza-service.exe",
+                "**/bin/win/bazad.exe"
+            ]
         },
         "nsis": {
             "artifactName": "${productName}-v${version}-${os}-${arch}-setup.${ext}",
@@ -85,7 +94,11 @@
         "mac": {
             "artifactName": "${productName}-v${version}-${os}-${arch}.${ext}",
             "category": "public.app-category.business",
-            "target": "zip"
+            "target": "zip",
+            "extraResources": [
+                "**/bin/osx/baza-service",
+                "**/bin/osx/bazad"
+            ]
         }
     },
     "postinstall": "./node_modules/.bin/electron-builder install-app-deps"

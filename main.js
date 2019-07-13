@@ -22,13 +22,24 @@ const SERVICE_FILENAME =
     platform === 'win32'
         ? `${config.walletServiceBinaryFilename}.exe`
         : config.walletServiceBinaryFilename
+const DAEMON_FILENAME =
+    platform === 'win32'
+        ? `${config.daemonBinaryFilename}.exe`
+        : config.daemonBinaryFilename
 const SERVICE_OSDIR =
     platform === 'win32' ? 'win' : platform === 'darwin' ? 'osx' : 'lin'
+const DAEMON_OSDIR = SERVICE_OSDIR
 const DEFAULT_SERVICE_BIN = path.join(
     process.resourcesPath,
     'bin',
     SERVICE_OSDIR,
     SERVICE_FILENAME
+)
+const DEFAULT_DAEMON_BIN = path.join(
+    process.resourcesPath,
+    'bin',
+    DAEMON_OSDIR,
+    DAEMON_FILENAME
 )
 
 const DEFAULT_REMOTE_NODE = config.remoteNodeListFallback
@@ -42,6 +53,7 @@ const DEFAULT_SETTINGS = {
     service_port: config.walletServiceRpcPort,
     service_password: 'passwrd',
     service_timeout: 30,
+    daemon_bin: DEFAULT_DAEMON_BIN,
     node_address: DEFAULT_REMOTE_NODE,
     pubnodes_last_updated: 946697799000,
     pubnodes_data: config.remoteNodeListFallback,
@@ -412,6 +424,29 @@ function serviceBinCheck() {
     }
 }
 
+function daemonBinCheck() {
+    if (DEFAULT_DAEMON_BIN.startsWith('/tmp')) {
+        log.warn(`AppImage env, copying daemon bin file`)
+        let targetPath = path.join(app.getPath('userData'), DAEMON_FILENAME)
+        try {
+            fs.renameSync(targetPath, `${targetPath}.bak`, err => {
+                if (err) log.error(err)
+            })
+        } catch (_e) {}
+
+        try {
+            fs.copyFile(DEFAULT_DAEMON_BIN, targetPath, err => {
+                if (err) {
+                    log.error(err)
+                    return
+                }
+                settings.set('daemon_bin', targetPath)
+                log.debug(`daemon binary copied to ${targetPath}`)
+            })
+        } catch (_e) {}
+    }
+}
+
 function initSettings() {
     Object.keys(DEFAULT_SETTINGS).forEach(k => {
         if (!settings.has(k) || settings.get(k) === null) {
@@ -420,6 +455,7 @@ function initSettings() {
     })
     settings.set('service_password', crypto.randomBytes(32).toString('hex'))
     settings.set('version', WALLETSHELL_VERSION)
+    daemonBinCheck()
     serviceBinCheck()
     fs.unlink(WALLET_CFGFILE, err => {
         if (err)

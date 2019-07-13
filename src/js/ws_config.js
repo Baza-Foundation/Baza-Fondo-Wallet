@@ -10,6 +10,9 @@ config.appGitRepo = 'https://add.repository.url.here'
 // default port number for your daemon (e.g. bazad)
 config.daemonDefaultRpcPort = 11754
 
+// change this to match your daemon executable filename
+config.daemonBinaryFilename = 'bazad'
+
 // wallet file created by this app will have this extension
 config.walletFileDefaultExt = 'bwl'
 
