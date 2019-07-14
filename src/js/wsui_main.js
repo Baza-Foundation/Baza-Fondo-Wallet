@@ -323,7 +323,7 @@ function genPaymentId(ret) {
     let dialogTpl = `<div class="transaction-panel">
             <h4>Generated Payment ID:</h4>
             <textarea data-cplabel="Payment ID" title="click to copy" class="ctcl default-textarea" rows="1" readonly="readonly">${payId.toUpperCase()}</textarea>
-            <span title="Close this dialog (esc)" class="dialog-close dialog-close-default" data-target="#ab-dialog"><i class="fas fa-window-close"></i></span>
+            <span title="Close this dialog (esc)" class="dialog-close dialog-close-default" data-target="#ab-dialog"><i class="fas fa-times-circle"></i></span>
         </div>`
     let dialog = document.getElementById('ab-dialog')
     if (dialog.hasAttribute('open')) dialog.close()
@@ -358,7 +358,7 @@ function showIntegratedAddressForm() {
         <div class="div-panel-buttons">
             <button id="doGenIntegratedAddr" type="button" class="button-green">Generate</button>
         </div>
-        <span title="Close this dialog (esc)" class="dialog-close dialog-close-default" data-target="#ab-dialog"><i class="fas fa-window-close"></i></span>
+        <span title="Close this dialog (esc)" class="dialog-close dialog-close-default" data-target="#ab-dialog"><i class="fas fa-times-circle"></i></span>
     </div>    
     `
     dialog.innerHTML = iaform
@@ -371,7 +371,7 @@ function showKeyBindings() {
     let shortcutstInfo = document.getElementById('shortcuts-main').innerHTML
     let keybindingTpl = `
         <div class="transaction-panel">${shortcutstInfo}
-            <span title="Close this dialog (esc)" class="dialog-close dialog-close-default" data-target="#ab-dialog"><i class="fas fa-window-close"></i></span>
+            <span title="Close this dialog (esc)" class="dialog-close dialog-close-default" data-target="#ab-dialog"><i class="fas fa-times-circle"></i></span>
         </div>`
     dialog.innerHTML = keybindingTpl
     dialog.showModal()
@@ -384,7 +384,7 @@ function showAbout() {
     let info = `
         <div class="transaction-panel">
             ${infoContent}
-            <span title="Close this dialog (esc)" class="dialog-close dialog-close-default" data-target="#ab-dialog"><i class="fas fa-window-close"></i></span>
+            <span title="Close this dialog (esc)" class="dialog-close dialog-close-default" data-target="#ab-dialog"><i class="fas fa-times-circle"></i></span>
         </div>`
     dialog.innerHTML = info
     dialog.showModal()
@@ -1078,7 +1078,7 @@ function handleAddressBook() {
                         data.key
                     }" type="button" class="form-bt button-red ab-delete" id="button-addressbook-panel-delete">Delete</button>
                 </div>
-                <span title="Close this dialog (esc)" class="dialog-close dialog-close-default" data-target="#ab-dialog"><i class="fas fa-window-close"></i></span>
+                <span title="Close this dialog (esc)" class="dialog-close dialog-close-default" data-target="#ab-dialog"><i class="fas fa-times-circle"></i></span>
             </div>`
 
         wsutil.innerHTML(dialog, tpl)
@@ -1129,7 +1129,7 @@ function handleAddressBook() {
                 <div class="div-panel-buttons">
                     <button id="createNewAddressBook" type="button" class="button-green">Create & activate</button>
                 </div>
-                <span title="Close this dialog (esc)" class="dialog-close dialog-close-default" data-target="#ab-dialog"><i class="fas fa-window-close"></i></span>
+                <span title="Close this dialog (esc)" class="dialog-close dialog-close-default" data-target="#ab-dialog"><i class="fas fa-times-circle"></i></span>
             </div>             
         `
 
@@ -1223,7 +1223,7 @@ function handleAddressBook() {
                     <div class="div-panel-buttons">
                         <button id="loadAddressBook" type="button" class="button-green">Open</button>
                     </div>
-                    <span id="addressBookSwitcherClose" title="Close this dialog (esc)" class="dialog-close dialog-close-defaultx" data-target="#ab-dialog"><i class="fas fa-window-close"></i></span>
+                    <span id="addressBookSwitcherClose" title="Close this dialog (esc)" class="dialog-close dialog-close-defaultx" data-target="#ab-dialog"><i class="fas fa-times-circle"></i></span>
                 </div>             
             `
             wsutil.innerHTML(dialog, tpl)
@@ -1614,7 +1614,7 @@ function handleWalletOpen() {
                 <div class="div-panel-buttons">
                     <button id="saveCustomNode" type="button" class="button-green">Save & activate</button>
                 </div>
-                <span title="Close this dialog (esc)" class="dialog-close dialog-close-default" data-target="#ab-dialog"><i class="fas fa-window-close"></i></span>
+                <span title="Close this dialog (esc)" class="dialog-close dialog-close-default" data-target="#ab-dialog"><i class="fas fa-times-circle"></i></span>
             </div>`
         dialog.innerHTML = iaform
         dialog.showModal()
@@ -1913,7 +1913,7 @@ function handleWalletRescan() {
             <div class="div-panel-buttons">
                 <button type="button" class="form-bt button-green" id="button-rescan-start">Start Rescan</button>
             </div>
-            <span title="Close this dialog (esc)" class="dialog-close dialog-close-default" data-target="#ab-dialog"><i class="fas fa-window-close"></i></span>
+            <span title="Close this dialog (esc)" class="dialog-close dialog-close-default" data-target="#ab-dialog"><i class="fas fa-times-circle"></i></span>
         </div>`
         let dialog = document.getElementById('ab-dialog')
         if (dialog.hasAttribute('open')) dialog.close()
@@ -2539,7 +2539,7 @@ function handleSendTransfer() {
                     <button data-target='#tf-dialog' type="button" class="form-bt button-red dialog-close-default" id="button-send-ko">Cancel</button>
                     <button data-target='#tf-dialog' type="button" class="form-bt button-green" id="button-send-ok">OK, Send it!</button>
                 </div>
-                <span title="Close this dialog (esc)" class="dialog-close dialog-close-default" data-target="#ab-dialog"><i class="fas fa-window-close"></i></span>
+                <span title="Close this dialog (esc)" class="dialog-close dialog-close-default" data-target="#ab-dialog"><i class="fas fa-times-circle"></i></span>
             </div>`
 
         let dialog = document.getElementById('tf-dialog')
@@ -2869,7 +2869,7 @@ function handleTransactions() {
                         </tbody>
                     </table>
                     <p class="text-center">${txhashUrl}</p>
-                    <span title="Close this dialog (esc)" class="dialog-close dialog-close-default" data-target="#ab-dialog"><i class="fas fa-window-close"></i></span>
+                    <span title="Close this dialog (esc)" class="dialog-close dialog-close-default" data-target="#ab-dialog"><i class="fas fa-times-circle"></i></span>
                 </div>
             `
 
@@ -3412,9 +3412,9 @@ function initKeyBindings() {
         return openedDialog.close()
     })
 
-    Mousetrap.bind([`ctrl+\\`, `command+\\`], () => {
-        setDarkMode(!document.documentElement.classList.contains('dark'))
-    })
+    // Mousetrap.bind([`ctrl+\\`, `command+\\`], () => {
+    //     setDarkMode(!document.documentElement.classList.contains('dark'))
+    // })
 }
 
 function fetchFromRaw() {
