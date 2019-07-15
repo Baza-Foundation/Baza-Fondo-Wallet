@@ -1,7 +1,10 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self' https://atom.io https://gh-contractor-zcbenz.s3.amazonaws.com; img-src 'self' file: data:; style-src 'self' 'unsafe-inline'; media-src 'self'">
+        <meta
+            http-equiv="Content-Security-Policy"
+            content="default-src 'none'; script-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self' https://atom.io https://gh-contractor-zcbenz.s3.amazonaws.com; img-src 'self' file: data:; style-src 'self' 'unsafe-inline'; media-src 'self'"
+        />
         <style>
             * { box-sizing: border-box; }
             @keyframes geboy {0%{opacity:0.2;} 50%{opacity:1;} 100%{opacity:0.2;}}
@@ -9,7 +12,7 @@
             body{
                 height: 325px;
                 width: 325px;
-                background: #000 url(../assets/splash_bg.png) 50% 50% no-repeat;
+                background: #2d3436;
                 text-align: center;
                 margin: 0 auto;
                 position: relative;
@@ -17,34 +20,36 @@
             }
             #wsVersion{
                 position: absolute;
-                bottom: 55px;
+                bottom: 15px;
                 left: 138px;
                 color: #fff;
                 font-size: 14px;
-                text-shadow: 1px 1px 1px #888;
-                opacity: 0.5;
+                font-weight: bold;
+                /* text-shadow: 1px 1px 1px #888; */
+                /* opacity: 0.5; */
             }
             img {
-                opacity: 0.2;
+                /* opacity: 0.2; */
                 transition:all 0.5s ease-in-out;
                 animation:geboy normal 4s infinite ease-in-out;
                 animation-delay: 0.5s;
                 width:180px;
                 height:auto;
                 position:relative;
-                left:-10px;
+                /* left:-10px; */
                 top:68px;
                 image-rendering: optimizeQuality;
             }​
         </style>
     </head>
     <body>
-    <img src="../assets/splash_logo.png" />
-    <span id="wsVersion"></span>
+        <img src="../assets/baza_logo.svg" />
+        <span id="wsVersion"></span>
 
-    <script>
-        let remote = require('electron').remote;
-        document.getElementById('wsVersion').innerHTML = remote.app.getVersion();
-    </script>
+        <script>
+            let remote = require('electron').remote
+            document.getElementById('wsVersion').innerHTML =
+                'v' + remote.app.getVersion()
+        </script>
     </body>
 </html>

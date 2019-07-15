@@ -1,4 +1,4 @@
-service.log
+*.log
 node_modules/
 tbin/
 .vscode/
