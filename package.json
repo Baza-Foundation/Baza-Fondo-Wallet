@@ -3,8 +3,8 @@
     "productName": "BazaFondoWallet",
     "description": "Baza Foundation GUI Wallet",
     "version": "0.0.1",
-    "homepage": "https://add.project.homepage.url.here",
-    "repository": "https://add.repository.url.here",
+    "homepage": "https://gitlab.ekata.io/baza-foundation/baza-fondo-wallet",
+    "repository": "https://gitlab.ekata.io/baza-foundation/baza-fondo-wallet",
     "main": "main.js",
     "scripts": {
         "start": "electron .",
