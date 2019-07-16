@@ -5,7 +5,7 @@ config.appName = 'bazafondowallet'
 config.appDescription = 'Baza Foundation GUI Wallet'
 config.appSlogan = 'Because everyone needs a basic foundation'
 config.appId = 'foundation.baza.bazafondowallet'
-config.appGitRepo = 'https://add.repository.url.here'
+config.appGitRepo = 'https://gitlab.ekata.io/baza-foundation/baza-fondo-wallet'
 
 // default port number for your daemon (e.g. bazad)
 config.daemonDefaultRpcPort = 11754
