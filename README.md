@@ -52,10 +52,10 @@ Once you have Node+npm installed:
 
 ```
 # assuming you're building it on GNU/Linux
-# first, download baza-service binary for each platform
+# first, download the binaries for each platform
 # from Baz Token official repo
 # https://gitlab.ekata.io/baza-foundation/baz-token/releases
-# extract the baza-service executable somewhere
+# extract the baza-service and bazad executables somewhere
 
 # clone the repo
 $ git clone https://gitlab.ekata.io/baza-foundation/baza-fondo-wallet.git
@@ -72,17 +72,17 @@ $ cp ./src/assets/icon.* ./build/
 
 # build GNU/Linux package
 $ mkdir -p ./bin/lin
-$ cp /path/to/linux-version-of/baza-service ./bin/lin/
+$ cp /path/to/linux-version-of/baza-service /path/to/linux-version-of/bazad ./bin/lin/
 $ npm run dist-lin
 
 # build Windows package (you need to have wine 2.0+ installed)
 $ mkdir -p ./bin/win
-$ cp /path/to/win-version-of/baza-service.exe ./bin/win/
+$ cp /path/to/win-version-of/baza-service.exe /path/to/win-version-of/bazad.exe ./bin/win/
 $ npm run dist-win
 
 # build OSX package
 $ mkdir -p ./bin/osx
-$ cp /path/to/osx-version-of/baza-service ./bin/osx/
+$ cp /path/to/osx-version-of/baza-service /path/to/osx-version-of/bazad ./bin/osx/
 $ npm run dist-mac
 ```
 
