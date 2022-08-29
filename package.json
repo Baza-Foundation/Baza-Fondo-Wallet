@@ -2,7 +2,7 @@
     "name": "bazafondowallet",
     "productName": "BazaFondoWallet",
     "description": "Baza Foundation GUI Wallet",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "homepage": "https://gitlab.ekata.io/baza-foundation/baza-fondo-wallet",
     "repository": "https://gitlab.ekata.io/baza-foundation/baza-fondo-wallet",
     "main": "main.js",

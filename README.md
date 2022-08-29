@@ -1,6 +1,6 @@
 ## Baza Fondo Wallet - GUI wallet for BAZ.
 
-![Baza Fondo Wallet Screens](docs/wallet_screens.gif 'Baza Fondo Wallet Screens')
+![Baza Fondo Wallet Screens](docs/wallet_screens.gif "Baza Fondo Wallet Screens")
 
 ### Features:
 
@@ -34,13 +34,13 @@ This wallet contains the basic functions required to manage your BAZ assets:
 
 #### Windows:
 
-1. Download the latest installer here: https://gitlab.ekata.io/baza-foundation/baza-fondo-wallet/-/releases#0.0.1
+1. Download the latest installer here: https://gitlab.ekata.io/baza-foundation/baza-fondo-wallet/-/releases
 2. Run the installer (`BazaFondoWallet-<version>-win-setup.exe`) and follow the installation wizard.
 3. Launch BazaFondoWallet via start menu or desktop shortcut.
 
 #### GNU/Linux (AppImage):
 
-1. Download latest AppImage bundle here: https://gitlab.ekata.io/baza-foundation/baza-fondo-wallet/-/releases#0.0.1
+1. Download latest AppImage bundle here: https://gitlab.ekata.io/baza-foundation/baza-fondo-wallet/-/releases
 2. Make it executable, either via GUI file manager or command line, e.g. `chmod +x BazaFondoWallet-<version>-linux.AppImage`
 3. Run/execute the file, double click in file manager, or run via shell/command line (See: https://docs.appimage.org/user-guide/run-appimages.html)
 
@@ -54,7 +54,7 @@ Once you have Node+npm installed:
 # assuming you're building it on GNU/Linux
 # first, download the binaries for each platform
 # from Baz Token official repo
-# https://gitlab.ekata.io/baza-foundation/baz-token/releases
+# https://gitlab.ekata.io/baza-foundation/baz-token/-/releases
 # extract the baza-service and bazad executables somewhere
 
 # clone the repo
