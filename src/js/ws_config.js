@@ -5,13 +5,16 @@ config.appName = "bazafondowallet";
 config.appDescription = "Baza Foundation GUI Wallet";
 config.appSlogan = "Because everyone needs a basic foundation";
 config.appId = "foundation.baza.bazafondowallet";
-config.appGitRepo = "https://gitlab.ekata.io/baza-foundation/baza-fondo-wallet";
+config.appGitRepo = "https://github.com/Baza-Foundation/Baza-Fondo-Wallet";
 
 // default port number for your daemon (e.g. bazad)
 config.daemonDefaultRpcPort = 11754;
 
 // change this to match your daemon executable filename
 config.daemonBinaryFilename = "bazad";
+
+// version on the bundled daemon executable
+config.daemonBinaryVersion = "v0.0.1.9";
 
 // wallet file created by this app will have this extension
 config.walletFileDefaultExt = "bwl";
@@ -20,7 +23,7 @@ config.walletFileDefaultExt = "bwl";
 config.walletServiceBinaryFilename = "baza-service";
 
 // version on the bundled service (turtle-service)
-config.walletServiceBinaryVersion = "v0.0.2";
+config.walletServiceBinaryVersion = "v0.0.1.9";
 
 // config file format supported by wallet service, possible values:
 // ini -->  for turtle service (or its forks) version <= v0.8.3

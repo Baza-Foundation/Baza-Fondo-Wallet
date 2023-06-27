@@ -4,6 +4,13 @@ module.exports = Object.freeze({
         RESET: -300,
         NODE_ERROR: -200,
         NET_ONLINE: -10,
-        NET_OFFLINE: -50
-    }
+        NET_OFFLINE: -50,
+    },
+    daemonSyncStatus: {
+        IDLE: -100,
+        RESET: -300,
+        NODE_ERROR: -200,
+        NET_ONLINE: -10,
+        NET_OFFLINE: -50,
+    },
 });
